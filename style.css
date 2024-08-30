@@ -1,57 +1,110 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Roboto, sans-serif;
     margin: 0;
     padding: 0;
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 0px;
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: black;
+    background-color: #00001e;
     padding: 15px;
     color: white;
+    position: relative;
+	border-bottom: 2px solid #ff5f1f; 
 }
 
 .logo {
     font-size: 24px;
     font-weight: bold;
-	color: #FFA500;
+    color: #ff5f1f;
 }
 
-.navbar ul {
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+.nav-menu {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
 }
 
-.navbar ul li {
+.nav-menu li {
     margin-left: 20px;
 }
 
-.navbar ul li a {
+.nav-menu a {
     text-decoration: none;
     color: white;
     font-size: 16px;
     transition: color 0.3s;
+	margin-left:30px;
 }
 
-.navbar ul li a:hover,
-.navbar ul li a:focus {
-    color: #FFA500; /* Orange color on hover or focus */
+.nav-menu a:hover {
+    color: #ff5f1f;
 }
+
+/* Media query for responsive styling */
+@media (max-width: 900px) {
+    .navbar {
+        justify-content: space-between; 
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .menu-toggle {
+        display: block; 
+        margin-left: auto; 
+        position: relative; 
+		margin-right: 24px;
+    }
+
+    .nav-menu {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 60px; 
+        left: 0;
+        right: 0;
+        background-color: black;
+        z-index: 1000;
+        padding: 10px 0;
+    }
+
+    .nav-menu.show {
+        display: flex; 
+    }
+
+    .nav-menu li {
+        margin: 10px 0;
+        text-align: center;
+    }
+}
+
 
 .hero-image img {
     width: 100%;
-    height: 20%;
+    height: auto;
 }
+
+/* Other sections remain unchanged... */
+
+/* ... Continue with your CSS styles for other sections ... */
+
 
 .top-destinations {
     padding: 50px 10px;
@@ -59,7 +112,7 @@ body {
 }
 
 .top-destinations h2 {
-    color: #FFA500; /* Orange color */
+    color: #ff5f1f;
 }
 
 .destination-grid {
@@ -75,32 +128,97 @@ body {
 }
 
 .destination-item img {
-    width: 150px;
+    width: 210px;
     height: auto;
+    border-radius: 30px;
+	position: relative; 
+	z-index: 8; 
+    box-shadow: 0 4px 2px rgba(175, 69, 0, 1); 
 }
 
-.team-leads, .statistics, .testimonials, .contact-form {
-    padding: 50px 10px;
+.team-leads,
+.statistics,
+.testimonials,
+.contact-form {
+    padding: 20px 15px;
     text-align: center;
 }
 
-.team-leads h2, .testimonials h2, .contact-form h2 {
-    color: #FFA500; /* Orange color */
+.team-leads h2,
+.testimonials h2,
+.contact-form h2 {
+    color: #ff5f1f;
 }
 
+.team-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.testimonial-grid {
+    display: flex;
+    justify-content: space-around;
+}
+
+.team-member {
+    margin: 20px;
+}
+
+.testimonial {
+    margin: 20px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+	z-index: 8; 
+    box-shadow: 0 3px 1px rgb(60, 680, 780); 
+}
+
+.testimonials h3 {
+    color: #02ccfe;
+}
+
+.testimonials p:last-of-type {
+    color: gray;
+}
+
+.team-member img {
+    width: 250px;
+    height: 400px;
+    border-radius: 250px;
+    object-fit: cover;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+@import url('https://fonts.googleapis.com/css2?family=Chela+One&display=swap');
+
+.stat-item {
+    font-family: 'Chela One', cursive;
+    font-size: 2em; /* Adjust as needed */
+}
+
+.stats-item {
+    font-family: 'Arial', sans-serif; /* Default or any other font for text */
+    font-size: 1em; /* Adjust as needed */
+}
 .statistics {
     display: flex;
     justify-content: space-around;
-    background-color: #022b59;
+    background-color: #002434;
+    color: #ff5f1f;
+    padding: 10px 0;
+}
+
+.stats-item {
+    text-align: center;
+    font-size: 24px;
     color: white;
-    padding: 50px 0;
+    margin-top: 1px;
 }
 
 .statistics .stat-item {
     text-align: center;
-    font-size: 24px;
-    color: #FFA500; /* Orange color */
-    font-family: 'Arial', sans-serif;
+    font-size: 50px;
+    margin-top: 15px;
+    margin-bottom: 1px;
 }
 
 .contact-form form {
@@ -120,28 +238,30 @@ body {
 }
 
 .contact-form button {
-    padding: 10px 20px;
+    padding: 10px 80px;
     border-radius: 5px;
     border: none;
-    background-color: #FFA500; /* Orange color */
+    background-color: #02ccfe;
     color: white;
     cursor: pointer;
 }
 
 .contact-form button:hover {
-    background-color: #FF8C00; /* Darker orange for hover effect */
+    background-color: #ff5f1f;
 }
 
 .footer-links {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
-    background-color: #333;
+    background-color: #002434;
+    padding: 50px 15px;
     color: white;
-    padding: 20px 0;
 }
 
-.footer-links div h3 {
-    color: #FFA500; /* Orange color */
+.footer-links h3 {
+    margin-bottom: 10px;
+    color: #ff5f1f;
 }
 
 .footer-links ul {
@@ -149,44 +269,162 @@ body {
     padding: 0;
 }
 
-.footer-links ul li {
-    margin: 10px 0;
-}
-
 .footer-links ul li a {
-    color: white;
     text-decoration: none;
-}
-
-.footer-links ul li a:hover {
-    text-decoration: underline;
+    color: white;
+    display: block;
+    margin: 5px 0;
 }
 
 .footer-contact {
-    background-color: #222;
+    text-decoration: none;
     color: white;
+    display: block;
+    margin: 5px 0;
+}
+
+.footer-contact p {
+    margin: 5px 0;
+}
+
+.footer-copyright {
     text-align: center;
-    padding: 20px 0;
+    padding: 10px 0;
+    background-color: black;
+    color: white;
     font-size: 14px;
+    border-top: 2px solid #ff5f1f;
 }
 
-.footer-contact strong {
-    color: #FFA500; /* Orange color */
-}
-
-@media screen and (max-width: 768px) {
-    .navbar ul {
-        flex-direction: column;
+@media (max-width: 900px) {
+    .navbar {
+        flex-direction: row;
         align-items: flex-start;
     }
 
+    .navbar ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .destination-grid {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .destination-item {
+        margin: 10px;
+        width: calc(50% - 20px);
+    }
+
+    .team-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-member {
+        margin-bottom: 20px;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .statistics {
+        flex-direction: column;
+    }
+
+    .statistics .stat-item {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    .testimonial-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .testimonial {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .contact-form form {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .contact-form input {
+        width: 100%;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links div {
+        margin-bottom: 20px;
+    }
+
+    .footer-copyright {
+        padding: 10px 0;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar ul {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+		margin-top: 1px;
+		background-color: #00001e;
+    }
+
+    .destination-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .destination-item {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .team-grid,
+    .testimonial-grid,
     .statistics {
         flex-direction: column;
         align-items: center;
     }
 
-    .footer-links {
-        flex-direction: column;
-        align-items: center;
+    .statistics .stat-item {
+        width: 80%;
+        margin-bottom: 20px;
+        text-align: center;
     }
+
+    .team-member,
+    .testimonial {
+        width: 100%;
+        max-width: 400px;
+        margin-bottom: 20px;
+    }
+
+    .contact-form form {
+        width: 100%;
+    }
+}
+
+img[data-popup] {
+    transition: transform 0.3s ease;
+}
+
+img[data-popup]:hover {
+    transform: scale(1.1);
+    cursor: pointer;
 }
