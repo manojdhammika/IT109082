@@ -420,11 +420,4 @@ body {
     }
 }
 
-img[data-popup] {
-    transition: transform 0.3s ease;
-}
 
-img[data-popup]:hover {
-    transform: scale(1.1);
-    cursor: pointer;
-}
