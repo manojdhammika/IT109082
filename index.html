@@ -180,7 +180,6 @@
 		</div>
     </footer>
 	</div>
-	
 	<script>
 document.addEventListener("DOMContentLoaded", function() {
     const popupOverlay = document.createElement("div");
@@ -223,21 +222,21 @@ document.addEventListener("DOMContentLoaded", function () {
     const images = document.querySelectorAll("img[data-popup]");
 
     images.forEach(image => {
-        image.style.position = "relative"; 
+        image.style.position = "relative"; // Set position relative for smooth transition
 
         image.addEventListener("mousemove", function (e) {
-            const rect = this.getBoundingClientRect(); 
-            const x = e.clientX - rect.left; 
+            const rect = this.getBoundingClientRect(); // Get image size and position
+            const x = e.clientX - rect.left; // Mouse position within the image
             const y = e.clientY - rect.top;
 
-            const moveX = ((x / rect.width) - 0.5) * 20; 
-            const moveY = ((y / rect.height) - 0.5) * 20; 
+            const moveX = ((x / rect.width) - 0.5) * 20; // Calculate movement in X direction
+            const moveY = ((y / rect.height) - 0.5) * 20; // Calculate movement in Y direction
 
-            this.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.05)`; 
+            this.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.05)`; // Apply transform
         });
 
         image.addEventListener("mouseleave", function () {
-            this.style.transform = "translate(0, 0) scale(1)"; 
+            this.style.transform = "translate(0, 0) scale(1)"; // Reset transform when mouse leaves
         });
     });
 });
@@ -249,14 +248,16 @@ document.addEventListener("DOMContentLoaded", function () {
         const navMenu = document.querySelector('.nav-menu');
 
         menuToggle.addEventListener('click', function () {
-            navMenu.classList.toggle('show'); 
+            navMenu.classList.toggle('show'); // Toggle the menu visibility
         });
 
         // Hide the menu when an item is clicked
         navMenu.addEventListener('click', function () {
-            navMenu.classList.remove('show'); 
+            navMenu.classList.remove('show'); // Hide the menu
+        });
     });
 </script>
+
 
 
 
