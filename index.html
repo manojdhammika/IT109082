@@ -182,31 +182,6 @@
 	</div>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-    const images = document.querySelectorAll("img[data-popup]");
-
-    images.forEach(image => {
-        image.style.position = "relative"; // Set position relative for smooth transition
-
-        image.addEventListener("mousemove", function (e) {
-            const rect = this.getBoundingClientRect(); // Get image size and position
-            const x = e.clientX - rect.left; // Mouse position within the image
-            const y = e.clientY - rect.top;
-
-            const moveX = ((x / rect.width) - 0.5) * 20; // Calculate movement in X direction
-            const moveY = ((y / rect.height) - 0.5) * 20; // Calculate movement in Y direction
-
-            this.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.05)`; // Apply transform
-        });
-
-        image.addEventListener("mouseleave", function () {
-            this.style.transform = "translate(0, 0) scale(1)"; // Reset transform when mouse leaves
-        });
-    });
-});
-</script>
-
-<script>
     document.addEventListener("DOMContentLoaded", function () {
         const menuToggle = document.querySelector('.menu-toggle');
         const navMenu = document.querySelector('.nav-menu');
@@ -221,11 +196,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 </script>
-
-
-
-
-	
 	
 </body>
 </html>
